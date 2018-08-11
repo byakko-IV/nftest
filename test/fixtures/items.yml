@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+service:
+  description: Mensualidad Servicio
+  amount: 1800.00
+  quantity: 1
+  bill: one
+
+product_one:
+  description: Producto X
+  amount: 89.90
+  quantity: 1
+  bill: two
+
+product_two:
+  description: Producto Y
+  amount: 45.90
+  quantity: 1
+  bill: two
