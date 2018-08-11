@@ -1,0 +1,5 @@
+linters:
+  IdNames:
+    exclude: 
+      - 'app/views/layouts/application.html.haml'
+      - 'app/views/layouts/login.html.haml'
