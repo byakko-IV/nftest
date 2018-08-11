@@ -1,4 +1,31 @@
 %h1 Factura No.  #{@bill.id}
-%p Cliente: #{@bill.client_names}
-%p Emitida: #{l @bill.emitting_date, format: :short}
-%p Vence: #{l @bill.expiration_date, format: :short}
+.col-4
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Cliente
+        %th Emitida
+        %th Vence
+        %th Total
+      %tbody
+        %tr
+          %td= @bill.client_names
+          %td= l @bill.emitting_date, format: :short
+          %td= l @bill.expiration_date, format: :short
+          %td= number_to_currency @bill.amount
+.col-12
+  %h2 Desgloce
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Concepto
+        %th Cantidad
+        %th Monto
+        %th Subtotal
+    %tbody
+      - @bill.items.each do |item|
+        %tr
+          %td= item.description
+          %td= item.quantity
+          %td= number_to_currency item.amount
+          %td= number_to_currency item.subtotal

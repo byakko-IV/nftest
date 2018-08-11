@@ -23,4 +23,9 @@ class BillTest < ActiveSupport::TestCase
     @bill.expiration_date = nil
     assert_not @bill.valid?
   end
+
+  test 'bill amount should be 1800' do
+    assert @bill.amount, 1800
+    assert_not @bill.amount == 500
+  end
 end

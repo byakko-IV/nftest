@@ -1,0 +1,5 @@
+.nested-fields
+  = f.text_field :description, label: 'Concepto'
+  = f.text_field :amount, label: 'Monto'
+  = f.text_field :quantity, label: 'Cantidad'
+  = link_to_remove_association 'Borrar concepto', f

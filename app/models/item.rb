@@ -3,4 +3,8 @@ class Item < ApplicationRecord
 
   validates_presence_of :description, :amount
   validates :quantity, numericality: { greater_than: 0 }
+
+  def subtotal
+    quantity * amount
+  end
 end

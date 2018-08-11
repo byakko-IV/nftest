@@ -2,4 +2,10 @@
   = f.text_field :client_names, label: 'Cliente'
   = f.text_field :emitting_date, label: 'Fecha Emición', class: 'calendar'
   = f.text_field :expiration_date, label: 'Fecha Vencimiento', class: 'calendar'
+  %h3 Conceptos
+  #items
+    = f.fields_for :items do |item|
+      = render 'item_fields', f: item
+    .links
+      = link_to_add_association 'Agregar Concepto', f, :items
   = f.submit 'Guardar', class: 'btn btn-primary'

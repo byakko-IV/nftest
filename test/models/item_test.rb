@@ -23,4 +23,8 @@ class ItemTest < ActiveSupport::TestCase
     @item.quantity = 0
     assert_not @item.valid?
   end
+
+  test 'item subtotal should be 1800' do
+    assert @item.subtotal, 1800
+  end
 end

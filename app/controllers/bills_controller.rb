@@ -43,7 +43,9 @@ class BillsController < ApplicationController
 
   def bill_params
     params.require(:bill).permit(:client_names, :emitting_date,
-                                 :expiration_date)
+                                 :expiration_date,
+                                 items_attributes: [:id, :description, :amount,
+                                                    :quantity, :_destroy])
   end
 
   def set_bill

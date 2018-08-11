@@ -3,6 +3,7 @@ require 'test_helper'
 class BillsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @bill = bills(:one)
+    @item = items(:service)
   end
 
   test 'should get index' do
@@ -20,7 +21,10 @@ class BillsControllerTest < ActionDispatch::IntegrationTest
       post bills_url, params: {
         bill: { client_names: @bill.client_names,
                 emitting_date: @bill.emitting_date,
-                expiration_date: @bill.expiration_date }
+                expiration_date: @bill.expiration_date,
+                item_attributes: { description: @item.description,
+                                   amount: @item.amount,
+                                   quantity: @item.quantity } }
       }
 
       assert_redirected_to bill_url(Bill.last)
