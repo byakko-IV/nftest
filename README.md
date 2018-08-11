@@ -3,22 +3,24 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+El sistema require
+- ruby 2.4.1
+- rails 5.2
+- selenium web driver
 
-* Ruby version
+Se necesitará usuario en postgresql con el mismo nombre y password que el del 
+equipo donde se correrá el proyecto
 
-* System dependencies
+Instalar dependencias
 
-* Configuration
+- bundle install
 
-* Database creation
+Crear base de datos
 
-* Database initialization
+- rails db:create
+- rails db:migrate
 
-* How to run the test suite
+Correr pruebas
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- rails test
+- rails test:system
