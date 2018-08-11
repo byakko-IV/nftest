@@ -1,5 +1,5 @@
 = bootstrap_form_for @bill do |f|
   = f.text_field :client_names, label: 'Cliente'
-  = f.text_field :emitting_date, label: 'Fecha Emición'
-  = f.text_field :expiration_date, label: 'Fecha Vencimiento'
-  = f.submit 'Guardar'
+  = f.text_field :emitting_date, label: 'Fecha Emición', class: 'calendar'
+  = f.text_field :expiration_date, label: 'Fecha Vencimiento', class: 'calendar'
+  = f.submit 'Guardar', class: 'btn btn-primary'

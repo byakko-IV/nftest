@@ -12,6 +12,13 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require jquery-ui
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function(){
+  $('#alert').FadeTo(5000, 500).slideUp(500, function() {
+    $('#alert').alert('close');
+  });
+});

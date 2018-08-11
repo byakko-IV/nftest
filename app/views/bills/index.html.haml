@@ -1,7 +1,7 @@
-%h1 Facturas
-=link_to 'Nueva Factura', new_bill_path
+%h1.text-center Facturas
+= link_to 'Nueva Factura', new_bill_path, class: 'btn btn-success btn-sm mb-2'
 
-%table.table.table-bordered#bill-list
+%table.table.table-bordered.table-striped#bill-list
   %thead
     %tr
       %th Cliente

@@ -1,0 +1,5 @@
+inherits_from: .haml-lint_todo.yml
+
+Syntax:
+  exclude:
+    - 'app/views/layouts/application.html.haml'

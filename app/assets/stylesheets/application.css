@@ -12,6 +12,25 @@
  *
  *= require_tree .
  *= require bootstrap
+ *= require jquery-ui
  *= require rails_bootstrap_forms
  *= require_self
  */
+
+.form-control {
+  border-radius: 0px !important;
+}
+
+
+#alert {
+  position: absolute;
+  top: 60px;
+  left: 72%;
+  right: 20px;
+  z-index: 8;
+}
+
+.alert-notice {
+  background-color: #007bff;
+  color: white;
+}
