@@ -25,8 +25,8 @@ class BillsTest < ApplicationSystemTestCase
     visit '/'
     click_on 'Nueva Factura'
     fill_in 'Cliente', with: 'Fernando Rodríguez'
-    fill_in 'Fecha Emición', with: '11-08-2018'
-    fill_in 'Fecha Vencimiento', with: '30-08-2018'
+    page.find('#bill_emitting_date').set('2018-08-11')
+    page.find('#bill_expiration_date').set('2018-08-30')
     click_on 'Guardar'
 
     assert_text 'Factura Guardada'
@@ -41,8 +41,8 @@ class BillsTest < ApplicationSystemTestCase
       first(:link, 'Editar').click
     end
     fill_in 'Cliente', with: 'Fernando Rodríguez'
-    fill_in 'Fecha Emición', with: '11-08-2018'
-    fill_in 'Fecha Vencimiento', with: '30-08-2018'
+    page.find('#bill_emitting_date').set('2018-08-11')
+    page.find('#bill_expiration_date').set('2018-08-30')
     click_on 'Guardar'
 
     assert_text 'Factura Editada Correctamente'
@@ -65,8 +65,8 @@ class BillsTest < ApplicationSystemTestCase
     visit '/'
     click_on 'Nueva Factura'
     fill_in 'Cliente', with: 'Fernando Rodríguez'
-    fill_in 'Fecha Emición', with: '11-08-2018'
-    fill_in 'Fecha Vencimiento', with: '30-08-2018'
+    page.find('#bill_emitting_date').set('2018-08-11')
+    page.find('#bill_expiration_date').set('2018-08-30')
     click_on 'Agregar Concepto'
     fill_in 'Concepto', with: 'Servicio'
     fill_in 'Monto', with: 1000

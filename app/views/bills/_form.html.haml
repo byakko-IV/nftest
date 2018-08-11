@@ -1,7 +1,7 @@
 = bootstrap_form_for @bill do |f|
-  = f.text_field :client_names, label: 'Cliente'
-  = f.text_field :emitting_date, label: 'Fecha Emición', class: 'calendar'
-  = f.text_field :expiration_date, label: 'Fecha Vencimiento', class: 'calendar'
+  = f.text_field :client_names, label: 'Cliente', required: true
+  = f.date_field :emitting_date, label: 'Fecha Emición'
+  = f.date_field :expiration_date, label: 'Fecha Vencimiento'
   %h3 Conceptos
   #items
     = f.fields_for :items do |item|
