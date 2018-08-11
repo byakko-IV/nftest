@@ -5,7 +5,9 @@
 # one by one as the offenses are removed from the code base.
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
-
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
 # Offense count: 1
 # Cop supports --auto-correct.
 Layout/EmptyLines:
@@ -40,6 +42,7 @@ Style/Documentation:
     - 'app/mailers/*.rb'
     - 'app/models/*.rb'
     - 'config/*.rb'
+    - 'db/migrate/*'
 
 # Offense count: 6
 # Cop supports --auto-correct.

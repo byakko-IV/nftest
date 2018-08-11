@@ -4,7 +4,7 @@ class BillTest < ActiveSupport::TestCase
   setup do
     @bill = bills(:one)
   end
-  
+
   test 'valid bill' do
     assert @bill.valid?
   end
@@ -16,7 +16,7 @@ class BillTest < ActiveSupport::TestCase
 
   test 'invalid without emitting_date' do
     @bill.emitting_date = nil
-    assert_not @bill.valid? 
+    assert_not @bill.valid?
   end
 
   test 'invalid without expiration_date' do

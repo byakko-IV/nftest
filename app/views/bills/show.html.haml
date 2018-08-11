@@ -1,0 +1,4 @@
+%h1 Factura No.  #{@bill.id}
+%p Cliente: #{@bill.client_names}
+%p Emitida: #{l @bill.emitting_date, format: :short}
+%p Vence: #{l @bill.expiration_date, format: :short}

@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  date:
+    formats:
+      default: "%-d de %B de %Y"
+      long: "%-d de %B de %Y"
+      short: "%-d-%m-%Y"
+      month: "%B"
+      global: "%A %-d de %B de %Y"

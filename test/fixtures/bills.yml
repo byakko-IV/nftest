@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  client_names: Pedro Garcia
+  client_names: Pedro García
   status: 1
   emitting_date: 2018-08-11
   expiration_date: 2018-08-20
 
 two:
-  client_names: Carlos Martinez
+  client_names: Carlos Martínez
   status: 1
   emitting_date: 2018-08-13
   expiration_date: 2018-08-28
