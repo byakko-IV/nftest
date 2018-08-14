@@ -2,12 +2,12 @@
 
 one:
   client_names: Pedro García
-  status: 1
-  emitting_date: 2018-08-11
-  expiration_date: 2018-08-20
+  status: 0
+  emitting_date: <%= Date.today - 1.month %>
+  expiration_date: <%= Date.today + 1.day %>
 
 two:
   client_names: Carlos Martínez
-  status: 1
-  emitting_date: 2018-08-13
-  expiration_date: 2018-08-28
+  status: 0
+  emitting_date: <%= Date.today - 2.months %>
+  expiration_date: <%= Date.today - 1.month %>

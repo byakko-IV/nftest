@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root 'bills#index'
-  resources :bills
+  resources :bills do
+    resources :payments, only: [:create, :new]
+  end
 end

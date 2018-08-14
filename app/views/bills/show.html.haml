@@ -1,4 +1,5 @@
-%h1 Factura No.  #{@bill.id}
+%h1 Factura No.  #{@bill.id} 
+%h2 Estatus: #{@bill.status if @bill.pagada?}
 .col-4
   %table.table.table-bordered
     %thead
@@ -13,6 +14,14 @@
           %td= l @bill.emitting_date, format: :short
           %td= l @bill.expiration_date, format: :short
           %td= number_to_currency @bill.amount
+        %tr
+          %td{ colspan: '2' }
+          %td Recargos
+          %td= number_to_currency @bill.penalty
+        %tr
+          %td{ colspan: '2' }
+          %td Total
+          %td= number_to_currency @bill.total_to_pay
 .col-12
   %h2 Desgloce
   %table.table.table-bordered
