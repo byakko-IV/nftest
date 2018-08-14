@@ -28,4 +28,20 @@ class BillTest < ActiveSupport::TestCase
     assert @bill.amount, 1800
     assert_not @bill.amount == 500
   end
+
+  test 'penalty should be 100 time weeks amount of delay' do
+    @bill.expiration_date = Date.today - 3.week
+    assert @bill.penalty == 300
+  end
+
+  test 'total to pay should penalty if pay after expiration date' do
+    @bill.expiration_date = Date.today - 1.week
+    assert @bill.total_to_pay(Date.today) == 1900
+
+    @bill.expiration_date = Date.today - 3.week
+    assert @bill.total_to_pay(Date.today) == 2100
+
+    @bill.expiration_date = Date.today
+    assert @bill.total_to_pay == 1800
+  end
 end
