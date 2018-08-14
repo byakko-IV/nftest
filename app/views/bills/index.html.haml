@@ -15,6 +15,7 @@
         %td= bill.emitting_date
         %td= bill.expiration_date
         %td
+          = link_to 'Pagar', new_bill_payment_path(bill)
           = link_to 'Ver', bill
           = link_to 'Editar', edit_bill_path(bill)
           = link_to 'Borrar', bill_path(bill), method: :delete,

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  amount: 1.5
-  creation_date: 2018-08-11
-  apply_date: 2018-08-11
+transferencia:
+  amount: 1800
+  creation_date: <%= Date.today %>
+  apply_date: <%= Date.today %>
   bill: one
 
-two:
-  amount: 1.5
-  creation_date: 2018-08-11
-  apply_date: 2018-08-11
+ventanilla:
+  amount: 135.8
+  creation_date: <%= Date.today - 1.day %> 
+  apply_date: <%= Date.today  %>
   bill: two

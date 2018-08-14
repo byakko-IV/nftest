@@ -81,4 +81,16 @@ class BillsTest < ApplicationSystemTestCase
     assert_text '$1,000.00'
     assert_text '1'
   end
+
+  test 'should create bill payment' do
+    visit '/'
+    within '#bill-list' do
+      first(:link, 'Pagar').click
+    end
+
+   fill_in 'Monto', with: 1800
+   select('Transferencia', from: 'type')
+   click_on 'Guardar'
+   assert_text 'Estatus: pagada'
+  end
 end
