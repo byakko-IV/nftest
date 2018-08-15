@@ -2,8 +2,8 @@
 .row
   .col-8.offset-2.mt-5
 = bootstrap_form_for [@bill, @payment] do |f|
-  = select_tag "type",
-    options_for_select([ "Ventanilla", "Transferencia" ]), label: 'Tipo Pago',
+  = select_tag 'type',
+    options_for_select(%w[Ventanilla Transferencia]), label: 'Tipo Pago',
     onclick: 'set_dates()'
   = f.text_field :amount, label: 'Monto'
   = f.hidden_field :creation_date

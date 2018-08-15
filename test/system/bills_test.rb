@@ -88,9 +88,23 @@ class BillsTest < ApplicationSystemTestCase
       first(:link, 'Pagar').click
     end
 
-   fill_in 'Monto', with: 1800
-   select('Transferencia', from: 'type')
-   click_on 'Guardar'
-   assert_text 'Estatus: pagada'
+    fill_in 'Monto', with: 1800
+    select('Transferencia', from: 'type')
+    click_on 'Guardar'
+    assert_text 'Estatus: pagada'
+  end
+
+  test 'shoudl create bill payment with delay' do
+    visit '/'
+    within '#bill-list' do
+      within all('tr').last do
+        first(:link, 'Pagar').click
+      end
+    end
+
+    fill_in 'Monto', with: 1800
+    select('Transferencia', from: 'type')
+    click_on 'Guardar'
+    assert_text 'Estatus: pendiente'
   end
 end

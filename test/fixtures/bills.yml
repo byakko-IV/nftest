@@ -11,3 +11,9 @@ two:
   status: 0
   emitting_date: <%= Date.today - 2.months %>
   expiration_date: <%= Date.today - 1.month %>
+
+three:
+  client_names: Felipe Guzman
+  status: 0
+  emitting_date: <%= Date.today - 2.months %>
+  expiration_date: <%= Date.today - 1.month %>

@@ -4,16 +4,26 @@
 %table.table.table-bordered.table-striped#bill-list
   %thead
     %tr
+      %th Estatus
       %th Cliente
       %th Emición
       %th Vencimiento
+      %th Monto
+      %th Pagado
+      %th Recargos
       %th Opciones
+      %th Total a Pagar
   %tbody
-    - @bills.each do |bill|
+    - @bills.pendiente.each do |bill|
       %tr
+        %td= bill.status
         %td= bill.client_names
         %td= bill.emitting_date
         %td= bill.expiration_date
+        %td= number_to_currency bill.amount
+        %td= number_to_currency bill.payoff
+        %td= number_to_currency bill.penalty
+        %td= number_to_currency bill.total_to_pay
         %td
           = link_to 'Pagar', new_bill_payment_path(bill)
           = link_to 'Ver', bill
