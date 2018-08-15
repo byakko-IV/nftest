@@ -1,8 +1,8 @@
-%h1 Factura No.  #{@bill.id}
-%h2 Estatus: #{@bill.status}
+%h1.text-center.mt-4 Factura No.  #{@bill.id}
+%h3.ml-3.text-dark Estatus: #{@bill.status}
 .col-4
-  %table.table.table-bordered
-    %thead
+  %table.table.table-bordered.table-sm
+    %thead.bg-dark.text-white
       %tr
         %th Cliente
         %th Emitida
@@ -16,20 +16,20 @@
           %td= number_to_currency @bill.amount
         %tr
           %td{ colspan: '2' }
-          %td Recargos
+          %td.bg-dark.text-white Recargos
           %td= number_to_currency @bill.penalty
         %tr
           %td{ colspan: '2' }
-          %td Pagado
+          %td.bg-dark.text-white Pagado
           %td= number_to_currency @bill.payoff
         %tr
           %td{ colspan: '2' }
-          %td Total
+          %td.bg-dark.text-white Total
           %td= number_to_currency @bill.total_to_pay
 .col-12
   %h2 Desgloce
-  %table.table.table-bordered
-    %thead
+  %table.table.table-bordered.table-sm
+    %thead.bg-dark.text-white
       %tr
         %th Concepto
         %th Cantidad

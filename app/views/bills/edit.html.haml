@@ -1,3 +1,5 @@
-%h1.text-center Editar Factura #{@bill.id}
-.col-6.offset-3.mt-5
-  = render 'form'
+%h1.text-center.mt-4 Editar Factura #{@bill.id}
+.row
+  .col-8.offset-2.mt-2
+    .card.bg-light.p-4
+      = render 'form'

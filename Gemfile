@@ -8,6 +8,7 @@ end
 gem 'bootstrap_form'
 gem "cocoon"
 gem 'coffee-rails', '~> 4.2'
+gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-ui-rails'
