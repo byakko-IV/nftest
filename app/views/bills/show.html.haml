@@ -1,5 +1,5 @@
-%h1 Factura No.  #{@bill.id} 
-%h2 Estatus: #{@bill.status if @bill.pagada?}
+%h1 Factura No.  #{@bill.id}
+%h2 Estatus: #{@bill.status}
 .col-4
   %table.table.table-bordered
     %thead
@@ -18,6 +18,10 @@
           %td{ colspan: '2' }
           %td Recargos
           %td= number_to_currency @bill.penalty
+        %tr
+          %td{ colspan: '2' }
+          %td Pagado
+          %td= number_to_currency @bill.payoff
         %tr
           %td{ colspan: '2' }
           %td Total

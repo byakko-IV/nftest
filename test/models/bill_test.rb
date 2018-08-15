@@ -35,6 +35,7 @@ class BillTest < ActiveSupport::TestCase
   end
 
   test 'total to pay should penalty if pay after expiration date' do
+    @bill.payments = []
     @bill.expiration_date = Date.today - 1.week
     assert @bill.total_to_pay(Date.today) == 1900
 

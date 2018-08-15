@@ -18,11 +18,16 @@ class Bill < ApplicationRecord
   end
 
   def penalty
+    return 0 if payment_delay < 1
     payment_delay * 100
   end
 
-  def total_to_pay(payment_apply = Date.today)
-    payment_apply > expiration_date ? amount + penalty : amount
+  def total_to_pay(payment_date = Date.today)
+    payment_date > expiration_date ? amount + penalty - payoff : amount - payoff
+  end
+
+  def payoff
+    payments.map(&:amount).reduce(0, :+)
   end
 
   def pay!

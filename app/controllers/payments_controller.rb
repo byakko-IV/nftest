@@ -7,10 +7,10 @@ class PaymentsController < ApplicationController
 
   def create
     @payment = Payment.new(payments_params)
+    @bill.pay! if @payment.amount >= @bill.total_to_pay(
+      @payment.creation_date
+    )
     if @payment.save
-      @bill.pay! if @payment.amount >= @bill.total_to_pay(
-        @payment.creation_date
-      )
       redirect_to @payment.bill
     else
       render :new

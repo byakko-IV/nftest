@@ -17,3 +17,9 @@ product_two:
   amount: 45.90
   quantity: 1
   bill: two
+
+concepto:
+  description: Cobro regular
+  amount: 2000
+  quantity: 1
+  bill: three
