@@ -1,11 +1,16 @@
 = bootstrap_form_for @bill do |f|
-  = f.text_field :client_names, label: 'Cliente', required: true
-  = f.date_field :emitting_date, label: 'Fecha Emición'
-  = f.date_field :expiration_date, label: 'Fecha Vencimiento'
-  %h3 Conceptos
+  .row
+    .col-4
+      = f.text_field :client_names, label: 'Cliente', required: true
+    .col-4
+      = f.date_field :emitting_date, label: 'Fecha Emición'
+    .col-4
+      = f.date_field :expiration_date, label: 'Fecha Vencimiento'
   #items
     = f.fields_for :items do |item|
       = render 'item_fields', f: item
     .links
-      = link_to_add_association 'Agregar Concepto', f, :items
+      = link_to_add_association 'Agregar Concepto', f, :items,
+        class: 'btn btn-sm btn-success'
+  %hr
   = f.submit 'Guardar', class: 'btn btn-primary'

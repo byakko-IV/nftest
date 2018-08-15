@@ -19,6 +19,7 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function(){
+  $('[data-toggle="tooltip"]').tooltip()
   $('#alert').FadeTo(5000, 500).slideUp(500, function() {
     $('#alert').alert('close');
   });

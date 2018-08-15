@@ -1,12 +1,18 @@
-%h1.text-center Cargar Pago
+%h1.text-center.mt-4 Cargar Pago
 .row
-  .col-8.offset-2.mt-5
-= bootstrap_form_for [@bill, @payment] do |f|
-  = select_tag 'type',
-    options_for_select(%w[Ventanilla Transferencia]), label: 'Tipo Pago',
-    onclick: 'set_dates()'
-  = f.text_field :amount, label: 'Monto'
-  = f.hidden_field :creation_date
-  = f.hidden_field :apply_date
-  = f.hidden_field :bill_id
-  = f.submit 'Guardar'
+  .col-8.offset-2.mt-2
+    .card.bg-light.p-4
+      = bootstrap_form_for [@bill, @payment] do |f|
+        .row
+          .col-6
+            %label Tipo Pago
+            = select_tag 'type',
+              options_for_select(%w[Ventanilla Transferencia]),
+              onclick: 'set_dates()', class: 'form-control'
+          .col-6
+            = f.text_field :amount, label: 'Monto'
+            = f.hidden_field :creation_date
+            = f.hidden_field :apply_date
+            = f.hidden_field :bill_id
+          .col-12
+            = f.submit 'Guardar', class: 'btn btn-primary'
