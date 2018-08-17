@@ -13,9 +13,9 @@
       %th Recargos
       %th Opciones
       %th Total a Pagar
-  %tbody
+  %tbody.bills
     - @bills.pendiente.each do |bill|
-      %tr
+      %tr{ 'data-bill-id' => bill.id }
         %td= bill.status
         %td= bill.client_names
         %td= bill.emitting_date

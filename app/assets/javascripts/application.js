@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require cocoon
 //= require turbolinks
+//= require_tree ./channels
 //= require_tree .
 
 $(document).on('turbolinks:load', function(){
