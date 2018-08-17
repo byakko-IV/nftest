@@ -1,4 +1,7 @@
 class Bill < ApplicationRecord
+  after_save :broadcast_save
+  after_destroy :broadcast_delete
+
   has_many :items, inverse_of: :bill, dependent: :destroy
   has_many :payments, dependent: :destroy
 
@@ -32,5 +35,25 @@ class Bill < ApplicationRecord
 
   def pay!
     update(status: 'pagada')
+  end
+
+  def broadcast_save
+    ActionCable.server.broadcast 'bills', status: 'saved',
+                                           id: id,
+                                           state: status,
+                                           client_names: client_names,
+                                           emitting_date: emitting_date,
+                                           expiration_date: expiration_date,
+                                           html: render_bill
+  end
+
+  def broadcast_delete
+    ActionCable.server.broadcast 'bills', status: 'deleted', id: id
+  end
+
+  private
+
+  def render_bill
+    ApplicationController.render(partial: 'bills/bill', locals: { bill: self })
   end
 end

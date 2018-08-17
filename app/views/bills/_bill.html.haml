@@ -1,0 +1,23 @@
+%tr{ 'data-bill-id' => bill.id }
+  %td= bill.status
+  %td= bill.client_names
+  %td= bill.emitting_date
+  %td= bill.expiration_date
+  %td= number_to_currency bill.amount
+  %td= number_to_currency bill.payoff
+  %td= number_to_currency bill.penalty
+  %td= number_to_currency bill.total_to_pay
+  %td
+    = link_to new_bill_payment_path(bill), data: { toggle: 'tooltip',
+      placement: 'top', title: 'Pagar' } do
+      %i.fa.fa-money.text-warning
+    = link_to bill, data: { toggle: 'tooltip', placement: 'top',
+      title: 'Ver' } do
+      %i.fa.fa-eye.text-info
+    = link_to edit_bill_path(bill), data: { toggle: 'tooltip',
+      placement: 'top', title: 'Editar'} do
+      %i.fa.fa-edit.text-success
+    = link_to bill_path(bill), method: :delete,
+      data: { confirm: 'Esta seguro', toggle: 'tooltip',
+      placement: 'top', title: 'Eliminar'} do
+      %i.fa.fa-trash.text-danger

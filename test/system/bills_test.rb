@@ -17,7 +17,7 @@ class BillsTest < ApplicationSystemTestCase
   test 'should show bill' do
     visit '/'
     within '#bill-list' do
-      first(:link, 'Ver').click
+      first('a[data-title="Ver"]').click
     end
   end
 
@@ -38,7 +38,7 @@ class BillsTest < ApplicationSystemTestCase
   test 'should edit existing bill' do
     visit '/'
     within '#bill-list' do
-      first(:link, 'Editar').click
+      first('a[data-title="Editar"]').click
     end
     fill_in 'Cliente', with: 'Fernando Rodríguez'
     page.find('#bill_emitting_date').set('2018-08-11')
@@ -55,7 +55,7 @@ class BillsTest < ApplicationSystemTestCase
     visit '/'
     within '#bill-list' do
       accept_alert do
-        first(:link, 'Borrar').click
+        first('a[data-title="Eliminar"]').click
       end
     end
     assert_text 'Factura Borrada'
@@ -85,7 +85,7 @@ class BillsTest < ApplicationSystemTestCase
   test 'should create bill payment' do
     visit '/'
     within '#bill-list' do
-      first(:link, 'Pagar').click
+      first('a[data-title="Pagar"]').click
     end
 
     fill_in 'Monto', with: 1800
@@ -98,7 +98,7 @@ class BillsTest < ApplicationSystemTestCase
     visit '/'
     within '#bill-list' do
       within all('tr').last do
-        first(:link, 'Pagar').click
+        first('a[data-title="Pagar"]').click
       end
     end
 
