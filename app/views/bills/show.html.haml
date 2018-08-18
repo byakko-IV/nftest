@@ -42,3 +42,17 @@
           %td= item.quantity
           %td= number_to_currency item.amount
           %td= number_to_currency item.subtotal
+.col-12
+  %h2 Pagos
+  %table.table.table-bordered.table-sm
+    %thead.bg-dark.text-white
+      %tr
+        %th Fecha Creación
+        %th Fecha Aplicación
+        %th Monto
+    %tbody
+      - @bill.payments.each do |payment|
+        %tr
+          %td= l payment.creation_date, format: :short
+          %td= l payment.apply_date, format: :short
+          %td= number_to_currency payment.amount

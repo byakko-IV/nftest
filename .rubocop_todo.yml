@@ -31,6 +31,12 @@ Layout/SpaceInsideArrayLiteralBrackets:
 Style/ClassAndModuleChildren:
   Exclude:
     - 'test/test_helper.rb'
+    - 'test/controllers/api/v1/*.rb'
+    - 'app/controllers/api/v1/*.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/workers/*.rb'
 
 # Offense count: 5
 Style/Documentation:
@@ -38,9 +44,12 @@ Style/Documentation:
     - 'spec/**/*'
     - 'test/**/*'
     - 'app/controllers/*.rb'
+    - 'app/controllers/api/v1/*.rb'
     - 'app/helpers/*.rb'
     - 'app/mailers/*.rb'
     - 'app/models/*.rb'
+    - 'app/workers/*.rb'
+    - 'app/channels/*.rb'
     - 'config/*.rb'
     - 'db/migrate/*'
 
