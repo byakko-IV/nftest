@@ -20,19 +20,9 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function(){
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
   $('#alert').FadeTo(5000, 500).slideUp(500, function() {
     $('#alert').alert('close');
   });
 });
-
-function set_dates(){
-  date = new Date();
-  if($("#type").val() == 'Transferencia'){
-    $("#payment_creation_date").val(new Date().toISOString().slice(0,10));
-    $("#payment_apply_date").val(new Date().toISOString().slice(0,10));
-  }else{
-    $("#payment_creation_date").val(new Date().toISOString().slice(0,10));
-    $("#payment_apply_date").val((date.getDate() + 1).toISOString().slice(0,10));
-  }
 }

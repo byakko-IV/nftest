@@ -15,9 +15,9 @@
       title: 'Ver' } do
       %i.fa.fa-eye.text-info
     = link_to edit_bill_path(bill), data: { toggle: 'tooltip',
-      placement: 'top', title: 'Editar'} do
+      placement: 'top', title: 'Editar' } do
       %i.fa.fa-edit.text-success
     = link_to bill_path(bill), method: :delete,
       data: { confirm: 'Esta seguro', toggle: 'tooltip',
-      placement: 'top', title: 'Eliminar'} do
+      placement: 'top', title: 'Eliminar' } do
       %i.fa.fa-trash.text-danger

@@ -39,12 +39,12 @@ class Bill < ApplicationRecord
 
   def broadcast_save
     ActionCable.server.broadcast 'bills', status: 'saved',
-                                           id: id,
-                                           state: status,
-                                           client_names: client_names,
-                                           emitting_date: emitting_date,
-                                           expiration_date: expiration_date,
-                                           html: render_bill
+                                          id: id,
+                                          state: status,
+                                          client_names: client_names,
+                                          emitting_date: emitting_date,
+                                          expiration_date: expiration_date,
+                                          html: render_bill
   end
 
   def broadcast_delete
