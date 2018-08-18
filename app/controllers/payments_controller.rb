@@ -7,6 +7,11 @@ class PaymentsController < ApplicationController
 
   def create
     @payment = Payment.new(payments_params)
+    if @payment.payment_type
+      @payment.creation_date =  @payment.apply_date - 1.day
+    else
+      @payment.creation_date =  @payment.apply_date
+    end
     @bill.pay! if @payment.amount >= @bill.total_to_pay(
       @payment.creation_date
     )

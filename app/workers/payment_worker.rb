@@ -8,6 +8,7 @@ class PaymentWorker
     payment.apply_date = args[2]
     payment.amount = args[3].to_f
     payment.bill_id = args[0].to_i
+    payment.payment_type = args[4]
     bill.pay! if payment.amount >= bill.total_to_pay(
       payment.creation_date
     )

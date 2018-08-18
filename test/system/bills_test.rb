@@ -89,7 +89,7 @@ class BillsTest < ApplicationSystemTestCase
     end
 
     fill_in 'Monto', with: 1800
-    select('Transferencia', from: 'type')
+    select('transferencia', from: 'Tipo Pago')
     click_on 'Guardar'
     assert_text 'Estatus: pagada'
   end
@@ -103,7 +103,7 @@ class BillsTest < ApplicationSystemTestCase
     end
 
     fill_in 'Monto', with: 1800
-    select('Transferencia', from: 'type')
+    select('transferencia', from: 'Tipo Pago')
     click_on 'Guardar'
     assert_text 'Estatus: pendiente'
   end

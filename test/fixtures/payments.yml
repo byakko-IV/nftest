@@ -4,10 +4,12 @@ transferencia:
   amount: 1800
   creation_date: <%= Date.today %>
   apply_date: <%= Date.today %>
+  payment_type: 'transferecnia'
   bill: one
 
 ventanilla:
   amount: 135.8
   creation_date: <%= Date.today - 1.day %> 
   apply_date: <%= Date.today  %>
+  payment_type: 'ventanilla'
   bill: two

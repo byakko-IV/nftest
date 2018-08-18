@@ -18,7 +18,8 @@ class PaymentsControllerTest < ActionDispatch::IntegrationTest
         payment:  { amount: payment.amount,
                     creation_date: payment.creation_date,
                     apply_date: payment.apply_date,
-                    bill_id: payment.bill_id }
+                    bill_id: payment.bill_id,
+                    payment_type: payment.payment_type }
       }
       assert_not payment.bill.pagada?
       assert_redirected_to bill_url(payment.bill)
@@ -32,7 +33,8 @@ class PaymentsControllerTest < ActionDispatch::IntegrationTest
       post bill_payments_url(bill), params: {
         payment:  { amount: payment.amount,
                     creation_date: payment.creation_date,
-                    apply_date: payment.apply_date, bill_id: payment.bill_id }
+                    apply_date: payment.apply_date, bill_id: payment.bill_id,
+                    payment_type: payment.payment_type }
       }
       assert payment.bill.pagada?
       assert_redirected_to bill_url(payment.bill)

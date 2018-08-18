@@ -5,7 +5,8 @@ class Api::V1::PaymentsController < ApplicationController
     PaymentWorker.perform_async(params[:bill_id],
                                 params[:payment][:creation_date],
                                 params[:payment][:apply_date],
-                                params[:payment][:amount])
+                                params[:payment][:amount],
+                                params[:payment][:payment_type])
     render json: { status: :success }
   end
 end
